@@ -18,51 +18,54 @@
                 <span class="logo-agency">AGENCY</span>
             </div>
         </div>
-        <div class="nav-links">
-            <a href="#about" class="nav-link" data-pt="Quem Somos" data-en="About Us" data-es="Quiénes Somos">Quem Somos</a>
-            <a href="#services" class="nav-link" data-pt="O Que Fazemos" data-en="What We Do" data-es="Qué Hacemos">O Que Fazemos</a>
-            <a href="#players" class="nav-link" data-pt="Jogadores" data-en="Players" data-es="Jugadores">Jogadores</a>
-            <a href="#partners" class="nav-link" data-pt="Parceiros" data-en="Partners" data-es="Socios">Parceiros</a>
-            <a href="#news" class="nav-link" data-pt="Notícias" data-en="News" data-es="Noticias">Notícias</a>
-            <a href="#contact" class="nav-link" data-pt="Contato" data-en="Contact" data-es="Contacto">Contato</a>
+        <div class="nav-links" id="mobileMenu">
+            <button class="close-menu-btn">
+                <i class="fas fa-times"></i>
+            </button>
+            <a href="#about" class="nav-link">Quem Somos</a>
+            <a href="#services" class="nav-link">O Que Fazemos</a>
+            <a href="#players" class="nav-link">Jogadores</a>
+            <a href="#partners" class="nav-link">Parceiros</a>
+            <a href="#news" class="nav-link">Notícias</a>
+            <a href="#contact" class="nav-link">Contato</a>
+            <div class="mobile-language-selector">
+                <button onclick="changeLanguage('pt')" class="active">PT</button>
+                <button onclick="changeLanguage('en')">EN</button>
+                <button onclick="changeLanguage('es')">ES</button>
+            </div>
         </div>
-        <button class="mobile-menu-btn">
-            <i class="fas fa-bars"></i>
-        </button>
-        <div class="language-selector">
-            <button onclick="changeLanguage('pt')" class="active">PT</button>
-            <button onclick="changeLanguage('en')">EN</button>
-            <button onclick="changeLanguage('es')">ES</button>
+        <div class="mobile-buttons">
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="language-selector desktop-only">
+                <button onclick="changeLanguage('pt')" class="active">PT</button>
+                <button onclick="changeLanguage('en')">EN</button>
+                <button onclick="changeLanguage('es')">ES</button>
+            </div>
         </div>
     </nav>
 
     <main>
         <section id="hero">
             <div class="hero-content">
-                <h1 class="glitch" data-pt="O Futuro do Futebol" data-en="The Future of Soccer" data-es="El Futuro del Fútbol">O Futuro do Futebol</h1>
-                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
-                    <span data-pt="Transformando Talentos em Lendas" data-en="Turning Talents into Legends" data-es="Transformando Talentos en Leyendas">
-                        Transformando Talentos em Lendas
-                    </span>
-                </p>
-                <a href="#contact" class="cta-button" data-aos="fade-up" data-aos-delay="400">
-                    <span data-pt="Seja um Wyn Player" data-en="Become a Wyn Player" data-es="Conviértete en un Jugador Wyn">
-                        Seja um Wyn Player
-                    </span>
-                </a>
-            </div>
-            <div class="hero-stats" data-aos="fade-left">
-                <div class="stat-item">
-                    <span class="stat-number">160+</span>
-                    <span class="stat-label" data-pt="Jogadores" data-en="Players" data-es="Jugadores">Jogadores</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">20+</span>
-                    <span class="stat-label" data-pt="Países" data-en="Countries" data-es="Países">Países</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">500+</span>
-                    <span class="stat-label" data-pt="Negociações" data-en="Deals" data-es="Negociaciones">Negociações</span>
+                <h1>O Futuro do Futebol</h1>
+                <p class="hero-subtitle">Transformando Talentos em Lendas</p>
+                <a href="#contact" class="cta-button">SEJA UM WYN PLAYER</a>
+                
+                <div class="hero-stats" data-aos="fade-left">
+                    <div class="stat-item">
+                        <span class="stat-number">150+</span>
+                        <span class="stat-label" data-pt="Jogadores" data-en="Players" data-es="Jugadores">Jogadores</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label" data-pt="Países" data-en="Countries" data-es="Países">Países</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label" data-pt="Negociações" data-en="Deals" data-es="Negociaciones">Negociações</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -206,40 +209,40 @@
     </main>
 
     <footer>
-        <div class="footer-content">
+        <div class="footer-container">
             <div class="footer-logo">
                 <img src="assets/logo.jpg" alt="Wyn Agency Logo">
-                <div class="logo-text">
-                    <span class="logo-name">WYN</span>
-                    <span class="logo-agency">AGENCY</span>
-                </div>
             </div>
-            <div class="footer-links">
-                <div class="footer-section">
-                    <h4 data-pt="Navegação" data-en="Navigation" data-es="Navegación">Navegação</h4>
-                    <a href="#about">Quem Somos</a>
-                    <a href="#services">Serviços</a>
-                    <a href="#players">Jogadores</a>
-                    <a href="#contact">Contato</a>
-                </div>
-                <div class="footer-section">
-                    <h4 data-pt="Legal" data-en="Legal" data-es="Legal">Legal</h4>
-                    <a href="#">Privacidade</a>
-                    <a href="#">Termos de Uso</a>
-                    <a href="#">Cookies</a>
-                </div>
-                <div class="footer-section">
-                    <h4 data-pt="Social" data-en="Social" data-es="Social">Social</h4>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
+            <div class="footer-content">
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4 data-pt="Navegação" data-en="Navigation" data-es="Navegación">Navegação</h4>
+                        <div class="footer-links-column">
+                            <a href="#about">Quem Somos</a>
+                            <a href="#services">Serviços</a>
+                            <a href="#players">Jogadores</a>
+                            <a href="#contact">Contato</a>
+                        </div>
+                    </div>
+                    <div class="footer-section">
+                        <h4 data-pt="Legal" data-en="Legal" data-es="Legal">Legal</h4>
+                        <div class="footer-links-column">
+                            <a href="#">Privacidade</a>
+                            <a href="#">Termos de Uso</a>
+                            <a href="#">Cookies</a>
+                        </div>
+                    </div>
+                    <div class="footer-section">
+                        <h4 data-pt="Social" data-en="Social" data-es="Social">Social</h4>
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/wynagency_/"><i class="fab fa-instagram"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Wyn Agency. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Wyn Agency. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
