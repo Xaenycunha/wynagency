@@ -214,10 +214,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelector('.nav-links');
     const closeMenuBtn = document.querySelector('.close-menu-btn');
     
-    console.log('Mobile Menu Button:', mobileMenuBtn);
-    console.log('Nav Links:', navLinks);
-    console.log('Close Menu Button:', closeMenuBtn);
-    
     // Create overlay element if it doesn't exist
     let overlay = document.querySelector('.menu-overlay');
     if (!overlay) {
