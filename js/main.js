@@ -208,8 +208,6 @@ document.head.appendChild(style);
 
 // Mobile Menu Handler
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM Content Loaded');
-    
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
     const closeMenuBtn = document.querySelector('.close-menu-btn');
@@ -220,13 +218,11 @@ document.addEventListener('DOMContentLoaded', function() {
         overlay = document.createElement('div');
         overlay.className = 'menu-overlay';
         document.body.appendChild(overlay);
-        console.log('Created overlay element');
     }
 
     // Open menu
     if (mobileMenuBtn) {
         mobileMenuBtn.addEventListener('click', function(e) {
-            console.log('Mobile menu button clicked');
             e.preventDefault();
             e.stopPropagation();
             navLinks.classList.add('active');
@@ -237,7 +233,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Close menu functions
     function closeMenu() {
-        console.log('Closing menu');
         navLinks.classList.remove('active');
         overlay.classList.remove('active');
         document.body.style.overflow = 'auto';
@@ -246,7 +241,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Close menu on close button click
     if (closeMenuBtn) {
         closeMenuBtn.addEventListener('click', function(e) {
-            console.log('Close button clicked');
             e.preventDefault();
             e.stopPropagation();
             closeMenu();
@@ -255,7 +249,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Close menu on overlay click
     overlay.addEventListener('click', function(e) {
-        console.log('Overlay clicked');
         e.preventDefault();
         e.stopPropagation();
         closeMenu();
@@ -265,7 +258,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuLinks = document.querySelectorAll('.nav-links a');
     menuLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            console.log('Menu link clicked:', this.getAttribute('href'));
             e.preventDefault();
             closeMenu();
             
@@ -290,7 +282,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Close menu on escape key
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && navLinks.classList.contains('active')) {
-            console.log('Escape key pressed');
             closeMenu();
         }
     });

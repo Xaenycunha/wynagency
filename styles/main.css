@@ -465,7 +465,6 @@ footer {
         padding: 80px 2rem;
         transition: right 0.3s ease;
         z-index: 1002;
-        justify-content: flex-start;
     }
 
     .nav-links.active {
@@ -499,26 +498,17 @@ footer {
     }
 
     .nav-link {
-        display: block;
         font-size: 1.2rem;
         padding: 1rem 0;
         width: 100%;
         text-align: center;
         color: var(--text-color);
         text-decoration: none;
-        transition: all 0.3s ease;
-        margin: 0.5rem 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .nav-link:last-child {
-        border-bottom: none;
+        transition: color 0.3s ease;
     }
 
     .nav-link:hover {
         color: var(--accent-color);
-        background: rgba(255, 255, 255, 0.05);
-        transform: translateX(5px);
     }
 
     .nav-link::after {
