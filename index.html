@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wyn Agency | Soccer Agency</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="assets/logo.png" alt="Wyn Agency Logo">
+        </div>
+        <div class="language-selector">
+            <button onclick="changeLanguage('pt')" class="active">PT</button>
+            <button onclick="changeLanguage('en')">EN</button>
+            <button onclick="changeLanguage('es')">ES</button>
+        </div>
+        <div class="nav-links">
+            <a href="#about" class="nav-link" data-pt="Quem Somos" data-en="About Us" data-es="Quiénes Somos">Quem Somos</a>
+            <a href="#services" class="nav-link" data-pt="O Que Fazemos" data-en="What We Do" data-es="Qué Hacemos">O Que Fazemos</a>
+            <a href="#location" class="nav-link" data-pt="Onde Estamos" data-en="Where We Are" data-es="Dónde Estamos">Onde Estamos</a>
+            <a href="#partners" class="nav-link" data-pt="Parceiros" data-en="Partners" data-es="Socios">Parceiros</a>
+            <a href="#contact" class="nav-link" data-pt="Contato" data-en="Contact" data-es="Contacto">Contato</a>
+        </div>
+    </nav>
+
+    <main>
+        <section id="hero">
+            <h1 class="glitch" data-pt="O Futuro do Futebol" data-en="The Future of Soccer" data-es="El Futuro del Fútbol">O Futuro do Futebol</h1>
+        </section>
+
+        <section id="about">
+            <h2 data-pt="Quem Somos" data-en="About Us" data-es="Quiénes Somos">Quem Somos</h2>
+            <div class="content">
+                <p data-pt="A Wyn Agency é uma agência de futebol inovadora, focada em desenvolver e gerenciar carreiras de atletas excepcionais." 
+                   data-en="Wyn Agency is an innovative soccer agency focused on developing and managing exceptional athletes' careers."
+                   data-es="Wyn Agency es una agencia de fútbol innovadora enfocada en desarrollar y gestionar carreras de atletas excepcionales.">
+                    A Wyn Agency é uma agência de futebol inovadora, focada em desenvolver e gerenciar carreiras de atletas excepcionais.
+                </p>
+            </div>
+        </section>
+
+        <section id="services">
+            <h2 data-pt="O Que Fazemos" data-en="What We Do" data-es="Qué Hacemos">O Que Fazemos</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-user-tie"></i>
+                    <h3 data-pt="Gestão de Carreira" data-en="Career Management" data-es="Gestión de Carrera">Gestão de Carreira</h3>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3 data-pt="Negociações" data-en="Negotiations" data-es="Negociaciones">Negociações</h3>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3 data-pt="Marketing" data-en="Marketing" data-es="Marketing">Marketing</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="location">
+            <h2 data-pt="Onde Estamos" data-en="Where We Are" data-es="Dónde Estamos">Onde Estamos</h2>
+            <div class="location-map">
+                <!-- Add your map integration here -->
+            </div>
+        </section>
+
+        <section id="partners">
+            <h2 data-pt="Parceiros" data-en="Partners" data-es="Socios">Parceiros</h2>
+            <div class="partners-grid">
+                <!-- Partner logos will be added here -->
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 data-pt="Contato" data-en="Contact" data-es="Contacto">Contato</h2>
+            <form id="contact-form" onsubmit="submitForm(event)">
+                <input type="text" id="name" required placeholder="Nome / Name / Nombre">
+                <input type="email" id="email" required placeholder="Email / Email / Correo">
+                <textarea id="message" required placeholder="Mensagem / Message / Mensaje"></textarea>
+                <button type="submit" data-pt="Enviar" data-en="Send" data-es="Enviar">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Wyn Agency. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
