@@ -173,33 +173,3 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 }, { threshold: 0.5 });
-
-document.querySelector('.hero-stats')?.forEach(stat => observer.observe(stat));
-
-// Add notification styles
-const style = document.createElement('style');
-style.textContent = `
-    .notification {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        padding: 15px 25px;
-        border-radius: 5px;
-        color: white;
-        transform: translateY(100px);
-        transition: transform 0.3s ease;
-        z-index: 1000;
-    }
-
-    .notification.show {
-        transform: translateY(0);
-    }
-
-    .notification.success {
-        background-color: #00ff00;
-    }
-
-    .notification.error {
-        background-color: #ff0000;
-    }
-`;
