@@ -254,24 +254,27 @@ document.addEventListener('DOMContentLoaded', function() {
         closeMenu();
     });
 
-    // Close menu on link click
+    // Handle menu link clicks
     const menuLinks = document.querySelectorAll('.nav-links a');
     menuLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             closeMenu();
-            // Handle the navigation after closing the menu
-            const href = this.getAttribute('href');
-            if (href) {
-                const target = document.querySelector(href);
-                if (target) {
-                    const navbarHeight = document.querySelector('.navbar').offsetHeight;
-                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
+            
+            // Get the target section
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                // Calculate the target position
+                const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+                
+                // Smooth scroll to the target
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
             }
         });
     });
