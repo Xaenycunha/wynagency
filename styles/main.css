@@ -23,6 +23,14 @@ body {
     background-color: var(--primary-color);
     color: var(--text-color);
     line-height: 1.6;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+main {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
 }
 
 /* Utility Classes */
@@ -425,9 +433,15 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 0 1rem;
+        overflow-x: hidden;
+    }
+
     .hero-content {
         width: 100%;
-        padding: 1rem;
+        padding: 0 1rem;
     }
 
     .hero-stats {
