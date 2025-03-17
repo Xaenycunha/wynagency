@@ -173,18 +173,46 @@
                             <a href="https://www.instagram.com/wynagency_/"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                <form id="contact-form" class="contact-form" data-aos="fade-left" onsubmit="submitForm(event)">
-                    <input type="text" id="name" required placeholder="Nome / Name / Nombre">
-                    <input type="email" id="email" required placeholder="Email / Email / Correo">
-                    <select id="subject" required>
-                        <option value="" disabled selected>Assunto / Subject / Asunto</option>
-                        <option value="player">Quero ser um jogador Wyn</option>
-                        <option value="partnership">Parceria</option>
-                        <option value="other">Outro</option>
-                    </select>
-                    <textarea id="message" required placeholder="Mensagem / Message / Mensaje"></textarea>
-                    <button type="submit" data-pt="Enviar" data-en="Send" data-es="Enviar">Enviar</button>
-                </form>
+                <form id="contact-form" class="contact-form" data-aos="fade-left" onsubmit="sendEmail(event)">
+    <input type="text" id="name" name="name" required placeholder="Nome / Name / Nombre">
+    <input type="email" id="email" name="email" required placeholder="Email / Email / Correo">
+    
+    <select id="subject" name="subject" required>
+        <option value="" disabled selected>Assunto / Subject / Asunto</option>
+        <option value="player">Quero ser um jogador Wyn</option>
+        <option value="partnership">Parceria</option>
+        <option value="other">Outro</option>
+    </select>
+    
+    <textarea id="message" name="message" required placeholder="Mensagem / Message / Mensaje"></textarea>
+    
+    <button type="submit">Enviar</button>
+</form>
+                    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        emailjs.init("aJr-cCiv5jDJDk4hp");
+
+    function sendEmail(event) {
+        event.preventDefault(); // Previne o reload da página
+
+        const templateParams = {
+            from_name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            subject: document.getElementById("subject").value,
+            message: document.getElementById("message").value
+        };
+
+        emailjs.send("service_m3gepz9", "template_14ngq7s", templateParams)
+            .then(response => {
+                alert("Mensagem enviada com sucesso!");
+                document.getElementById("contact-form").reset();
+            })
+            .catch(error => {
+                console.error("Erro ao enviar:", error);
+                alert("Erro ao enviar a mensagem. Tente novamente.");
+            });
+    }
+    </script>
             </div>
         </section>
     </main>
@@ -240,6 +268,6 @@ document.addEventListener('DOMContentLoaded', function() {
     </script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
 </body>
 </html>
