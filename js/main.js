@@ -212,24 +212,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelector('.nav-links');
     const closeMenuBtn = document.querySelector('.close-menu-btn');
     
-    // Create overlay element if it doesn't exist
-    let overlay = document.querySelector('.menu-overlay');
-    if (!overlay) {
-        overlay = document.createElement('div');
-        overlay.className = 'menu-overlay';
-        document.body.appendChild(overlay);
-    }
+    // Create overlay element
+    const overlay = document.createElement('div');
+    overlay.className = 'menu-overlay';
+    document.body.appendChild(overlay);
 
     // Open menu
-    if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            navLinks.classList.add('active');
-            overlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-    }
+    mobileMenuBtn.addEventListener('click', function() {
+        navLinks.classList.add('active');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
 
     // Close menu functions
     function closeMenu() {
@@ -239,26 +232,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Close menu on close button click
-    if (closeMenuBtn) {
-        closeMenuBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            closeMenu();
-        });
-    }
+    closeMenuBtn.addEventListener('click', closeMenu);
 
     // Close menu on overlay click
-    overlay.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        closeMenu();
-    });
+    overlay.addEventListener('click', closeMenu);
 
     // Close menu on link click
     const menuLinks = document.querySelectorAll('.nav-links a');
     menuLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
+        link.addEventListener('click', function() {
             closeMenu();
             // Handle the navigation after closing the menu
             const href = this.getAttribute('href');
