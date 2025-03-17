@@ -68,57 +68,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Contact form handling
-async function submitForm(event) {
-    event.preventDefault();
-    const form = event.target;
-    const submitButton = form.querySelector('button[type="submit"]');
-    const originalButtonText = submitButton.textContent;
-    
-    // Get form data
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        subject: document.getElementById('subject').value,
-        message: document.getElementById('message').value,
-        to: 'contact@wynagency.com.br'
-    };
 
-    try {
-        // Disable button and show loading state
-        submitButton.disabled = true;
-        submitButton.textContent = '...';
-
-        const response = await fetch('https://api.wynagency.com.br/contact', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData)
-        });
-
-        if (response.ok) {
-            showNotification('success', {
-                pt: 'Mensagem enviada com sucesso!',
-                en: 'Message sent successfully!',
-                es: '¡Mensaje enviado con éxito!'
-            });
-            form.reset();
-        } else {
-            throw new Error('Failed to send message');
-        }
-    } catch (error) {
-        showNotification('error', {
-            pt: 'Erro ao enviar mensagem. Tente novamente.',
-            en: 'Error sending message. Please try again.',
-            es: 'Error al enviar el mensaje. Inténtalo de nuevo.'
-        });
-    } finally {
-        // Restore button state
-        submitButton.disabled = false;
-        submitButton.textContent = originalButtonText;
-    }
-}
 
 // Notification system
 function showNotification(type, messages) {
