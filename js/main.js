@@ -123,27 +123,3 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 }, { threshold: 0.5 });
-
-// Inicializa EmailJS com sua chave pública (criada no passo abaixo)
-    emailjs.init("aJr-cCiv5jDJDk4hp");
-
-    function sendEmail(event) {
-        event.preventDefault(); // Previne o reload da página
-
-        const templateParams = {
-            from_name: document.getElementById("name").value,
-            email: document.getElementById("email").value,
-            subject: document.getElementById("subject").value,
-            message: document.getElementById("message").value
-        };
-
-        emailjs.send("service_m3gepz9", "template_14ngq7s", templateParams)
-            .then(response => {
-                alert("Mensagem enviada com sucesso!");
-                document.getElementById("contact-form").reset();
-            })
-            .catch(error => {
-                console.error("Erro ao enviar:", error);
-                alert("Erro ao enviar a mensagem. Tente novamente.");
-            });
-    }
