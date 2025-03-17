@@ -188,7 +188,9 @@
     
     <button type="submit">Enviar</button>
 </form>
-                    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+                   <script type="module">
+    import emailjs from 'https://cdn.emailjs.com/dist/email.min.js';
+</script>
     <script>
         emailjs.init("aJr-cCiv5jDJDk4hp");
 
