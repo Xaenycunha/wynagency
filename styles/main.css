@@ -502,13 +502,6 @@ footer {
         padding: 1rem 0;
         width: 100%;
         text-align: center;
-        color: var(--text-color);
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-
-    .nav-link:hover {
-        color: var(--accent-color);
     }
 
     .nav-link::after {
